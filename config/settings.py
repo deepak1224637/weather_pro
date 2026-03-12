@@ -2,7 +2,7 @@
 Django settings for config project.
 """
 
-from pathlib import Path
+from pathlib import Path , os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -12,7 +12,7 @@ SECRET_KEY = 'django-insecure-u2&4t*8vypl1^olm_#u(3%pb+c%!92n3m51yl73iy!xuu8l%rq
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # APPLICATIONS
@@ -94,6 +94,7 @@ USE_TZ = True
 
 # STATIC FILES
 STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
